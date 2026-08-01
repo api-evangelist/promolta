@@ -1,7 +1,26 @@
 aid: promolta
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/promolta.png
 name: Promolta
-description: Promolta is a company surfaced as a portfolio company of 500-global and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Promolta is a self-service video advertising platform that promotes YouTube
+  and other videos across a network of blogs, websites, mobile apps, and social
+  networks to grow views, subscribers, and engagement. Advertisers fund campaigns
+  and target audiences, while publishers in the Promolta network earn by
+  distributing sponsored video content. Promolta is a portfolio company of
+  500 Global. As of this enrichment pass the company publishes no public
+  developer API, SDK, developer portal, or webhook surface — this profile
+  captures its public web, legal, and domain-security footprint.
 url: https://raw.githubusercontent.com/api-evangelist/promolta/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,9 +30,16 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
+- Video
+- YouTube
+- Advertising
+- Marketing
+- Video Promotion
+- Social Media
+- Creators
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -23,3 +49,20 @@ maintainers:
 common:
 - type: Website
   url: https://promolta.com
+- type: Blog
+  url: http://blog.promolta.com
+- type: Support
+  url: https://www.promolta.com/user/faq
+- type: TermsOfService
+  url: https://www.promolta.com/user/terms
+- type: PrivacyPolicy
+  url: https://www.promolta.com/user/terms
+- type: SignUp
+  url: https://www.promolta.com/login
+- type: DomainSecurity
+  url: security/promolta-domain-security.yml
+x-enrichment:
+  date: '2026-07-20'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v1
