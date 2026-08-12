@@ -1,0 +1,89 @@
+generated: '2026-08-12'
+method: probed
+source: live HTTP probes of https://www.promolta.com and https://promolta.com
+note: >-
+  Every /.well-known/* path probed on both promolta.com and www.promolta.com answered
+  HTTP 200 with a ZERO-BYTE text/html body. This is the site's catch-all, not a served
+  document — the same catch-all answers 200 for /api, /graphql, /openapi.json and every
+  other unknown path. No well-known document is actually published, so NO WellKnown,
+  SecurityTxt or AgentCard pointer is emitted in apis.yml. A recorded absence, not a
+  presence.
+hosts:
+- host: www.promolta.com
+  paths:
+  - path: /.well-known/security.txt
+    status: 200
+    content_type: text/html; charset=UTF-8
+    bytes: 0
+    document: false
+    verdict: soft-200 catch-all, not a document
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 200
+    content_type: text/html; charset=UTF-8
+    bytes: 0
+    document: false
+    verdict: soft-200 catch-all, not a document
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    content_type: text/html; charset=UTF-8
+    bytes: 0
+    document: false
+    verdict: soft-200 catch-all, not a document
+    file: null
+  - path: /.well-known/api-catalog
+    status: 200
+    content_type: text/html; charset=UTF-8
+    bytes: 0
+    document: false
+    verdict: soft-200 catch-all, not a document
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    content_type: text/html; charset=UTF-8
+    bytes: 0
+    document: false
+    verdict: soft-200 catch-all, not a document
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 200
+    content_type: text/html; charset=UTF-8
+    bytes: 0
+    document: false
+    verdict: soft-200 catch-all, not a document
+    file: null
+  - path: /.well-known/agent.json
+    status: 200
+    content_type: text/html; charset=UTF-8
+    bytes: 0
+    document: false
+    verdict: soft-200 catch-all, not a document
+    file: null
+- host: promolta.com
+  note: >-
+    Apex redirects to www.promolta.com; identical zero-byte 200 on every path above.
+  paths:
+  - path: /.well-known/security.txt
+    status: 200
+    content_type: text/html; charset=UTF-8
+    bytes: 0
+    document: false
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 200
+    content_type: text/html; charset=UTF-8
+    bytes: 0
+    document: false
+    file: null
+summary:
+  paths_probed: 14
+  documents_found: 0
+  security_txt: false
+  openid_configuration: false
+  oauth_authorization_server: false
+  api_catalog: false
+  ai_plugin: false
+  agent_card: false
+  pointer_emitted: false
+checked: '2026-08-12'

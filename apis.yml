@@ -18,9 +18,12 @@ description: >-
   networks to grow views, subscribers, and engagement. Advertisers fund campaigns
   and target audiences, while publishers in the Promolta network earn by
   distributing sponsored video content. Promolta is a portfolio company of
-  500 Global. As of this enrichment pass the company publishes no public
-  developer API, SDK, developer portal, or webhook surface — this profile
-  captures its public web, legal, and domain-security footprint.
+  500 Global. Campaigns start at a $10 minimum budget, go live within 24 hours,
+  and can be optimized for views, YouTube likes, YouTube subscribers, or mobile
+  app installs, with targeting by age, gender, location, and keyword. As of the
+  2026-08-12 enrichment pass the company publishes no public developer API, SDK,
+  OpenAPI/GraphQL contract, developer portal, or webhook surface — this profile
+  captures its public web, legal, blog, and domain-security footprint.
 url: https://raw.githubusercontent.com/api-evangelist/promolta/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -30,7 +33,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-20'
+modified: '2026-08-12'
 tags:
 - Company
 - Video
@@ -50,19 +53,48 @@ common:
 - type: Website
   url: https://promolta.com
 - type: Blog
-  url: http://blog.promolta.com
+  url: https://blog.promolta.com
+- type: BlogRSS
+  url: https://blog.promolta.com/feed/
 - type: Support
   url: https://www.promolta.com/user/faq
 - type: TermsOfService
   url: https://www.promolta.com/user/terms
 - type: PrivacyPolicy
-  url: https://www.promolta.com/user/terms
+  url: https://www.promolta.com/user/privacy
 - type: SignUp
   url: https://www.promolta.com/login
+- type: Login
+  url: https://www.promolta.com/advertiser/login
+- type: GitHubOrganization
+  url: https://github.com/promolta
 - type: DomainSecurity
   url: security/promolta-domain-security.yml
+- type: LLMsTxt
+  url: llms/promolta-llms.txt
 x-enrichment:
-  date: '2026-07-20'
+  date: '2026-08-12'
   status: minimal
-  artifacts_added: 1
+  artifacts_added: 2
   pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Promolta ships an end-user self-service video-ad product only — every unknown path on
+    www.promolta.com (/api, /graphql, /openapi.json, /docs, /developers, /.well-known/*)
+    answers HTTP 200 with a ZERO-BYTE body from a catch-all, api./developer./docs.promolta.com
+    do not resolve in DNS, the "Promolta Inc" GitHub org has zero public repositories, and npm,
+    PyPI and RubyGems return no first-party packages.
+  evidence:
+  - url: https://www.promolta.com/openapi.json
+    status: 200
+  - url: https://www.promolta.com/graphql
+    status: 200
+  - url: https://www.promolta.com/.well-known/agent-card.json
+    status: 200
+  - url: https://api.promolta.com/
+    status: 0
+  - url: https://api.github.com/orgs/promolta
+    status: 200
+  checked: '2026-08-12'
